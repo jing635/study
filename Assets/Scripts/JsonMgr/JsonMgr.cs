@@ -21,13 +21,18 @@ public class JsonMgr
         File.WriteAllText(path, Jsonstr);
     }
 
-    public T LoadDate<T>(string fileName)
+    public T LoadDate<T>(string fileName) where T:new()
     {
         string path = Application.streamingAssetsPath + "/" + fileName + ".Json";
 
         if(!File.Exists(path))
         {
             path = Application.persistentDataPath + "/" + fileName + ".Json";
+        }
+
+        if (!File.Exists(path))
+        {
+            return new T();
         }
 
         string JsonStr = File.ReadAllText(path);

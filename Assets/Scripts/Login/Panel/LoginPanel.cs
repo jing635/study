@@ -41,7 +41,7 @@ public class LoginPanel : BasePanel
                 LoginMgr.Instance.LoginData.Password = password.text;
                 LoginMgr.Instance.LoginData.autoLogin = autoLogin.isOn;
                 LoginMgr.Instance.LoginData.rememberPw = rememberpw.isOn;
-                LoginMgr.Instance.SavaLoginData();
+                LoginMgr.Instance.SaveLoginData();
 
                 UIManager.Instance.HidePanel<LoginPanel>();
             }

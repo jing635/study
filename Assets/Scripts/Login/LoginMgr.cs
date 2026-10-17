@@ -24,12 +24,12 @@ public class LoginMgr
         registerData = JsonMgr.Instance.LoadDate<RegisterData>("RegisterData");
     }
 
-    public void SavaLoginData()
+    public void SaveLoginData()
     {
         JsonMgr.Instance.SaveDate(loginData, "LoginData");
     }
 
-    public void SavaRegisterData()
+    public void SaveRegisterData()
     {
         JsonMgr.Instance.SaveDate(registerData, "RegisterData");
     }
@@ -42,7 +42,7 @@ public class LoginMgr
         }
         registerData.registerInfos.Add(username, password);
 
-        SavaRegisterData();
+        SaveRegisterData();
 
         return true;
     }
