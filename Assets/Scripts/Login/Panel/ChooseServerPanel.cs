@@ -23,7 +23,7 @@ public class ChooseServerPanel : BasePanel
             GameObject item = Instantiate(Resources.Load<GameObject>("UI/ServerLeftButton"));
             item.transform.SetParent(svLeft.content, false);
 
-            ServerLeftItem serverLeft = item.GetComponent<ServerLeftItem>();
+            ServerLeftButton serverLeft = item.GetComponent<ServerLeftButton>();
 
             int beginIndex = i * 5 + 1;
             int endIndex = 5 * i + 1;
@@ -70,11 +70,11 @@ public class ChooseServerPanel : BasePanel
         {
             ServerInfo nowInfo = LoginMgr.Instance.ServerData[i-1];
 
-            GameObject serverItem = Instantiate(Resources.Load<GameObject>("UI/ServerRightItem"));
+            GameObject serverItem = Instantiate(Resources.Load<GameObject>("UI/ServerRightButton"));
 
             serverItem.transform.SetParent(svRight.content.transform, false);
 
-            ServerRightItem rightItem = serverItem.GetComponent<ServerRightItem>();
+            ServerRightButton rightItem = serverItem.GetComponent<ServerRightButton>();
 
             rightItem.InitInfo(nowInfo);
 

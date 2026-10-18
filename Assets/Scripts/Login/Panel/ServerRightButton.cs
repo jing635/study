@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ServerRightItem : MonoBehaviour
+public class ServerRightButton : MonoBehaviour
 {
     public Button btnself;
     public TextMeshProUGUI txtServer;

@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ServerLeftItem : MonoBehaviour
+public class ServerLeftButton : MonoBehaviour
 {
     public Button btnself;
     public TextMeshProUGUI txtinfo;
