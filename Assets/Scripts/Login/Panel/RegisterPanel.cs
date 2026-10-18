@@ -35,9 +35,13 @@ public class RegisterPanel : BasePanel
             
             if (LoginMgr.Instance.RegisterUser(userName.text, passWord.text))
             {
+                LoginMgr.Instance.ClearLoginData();
+
                 LoginPanel panel = UIManager.Instance.ShowPanel<LoginPanel>();
 
                 panel.SaveInfo(userName.text, passWord.text);
+
+                LoginMgr.Instance.ClearLoginData();
 
                 UIManager.Instance.HidePanel<RegisterPanel>();
             }

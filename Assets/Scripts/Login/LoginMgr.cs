@@ -16,12 +16,17 @@ public class LoginMgr
     private RegisterData registerData;
     public RegisterData RegisterData => registerData;
 
+    private List<ServerInfo> serverInfo;
+    public List<ServerInfo> ServerData => serverInfo;
+
 
     private LoginMgr()
     {
         loginData = JsonMgr.Instance.LoadDate<LoginData>("LoginData");
 
         registerData = JsonMgr.Instance.LoadDate<RegisterData>("RegisterData");
+
+        serverInfo = JsonMgr.Instance.LoadDate<List<ServerInfo>>("ServerInfo");
     }
 
     public void SaveLoginData()
@@ -32,6 +37,13 @@ public class LoginMgr
     public void SaveRegisterData()
     {
         JsonMgr.Instance.SaveDate(registerData, "RegisterData");
+    }
+
+    public void ClearLoginData()
+    {
+        loginData.frontServerID = 0;
+        loginData.rememberPw = false;
+        loginData.autoLogin = false;
     }
 
     public bool RegisterUser(string username, string password)

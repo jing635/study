@@ -43,6 +43,15 @@ public class LoginPanel : BasePanel
                 LoginMgr.Instance.LoginData.rememberPw = rememberpw.isOn;
                 LoginMgr.Instance.SaveLoginData();
 
+                if (LoginMgr.Instance.LoginData.frontServerID <=0)
+                {
+                    UIManager.Instance.ShowPanel<ChooseServerPanel>();
+                }
+                else
+                {
+                    UIManager.Instance.ShowPanel<ServerPanel>();
+                }
+
                 UIManager.Instance.HidePanel<LoginPanel>();
             }
 
