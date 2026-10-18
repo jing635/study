@@ -161,7 +161,7 @@ RectTransform:
   m_GameObject: {fileID: 3481790509583986171}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.74684393, y: 5.3753, z: 1}
+  m_LocalScale: {x: 0.75, y: 3.94, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7848557366223993683}
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1\u533A   \u706B\u4E4B\u610F\u5FD7"
+  m_text: "1\u533A  \u706B\u4E4B\u610F\u5FD7"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f635b07cec5a1c6429f9983eccfa2b52, type: 2}
   m_sharedMaterial: {fileID: 1062597653193042424, guid: f635b07cec5a1c6429f9983eccfa2b52, type: 2}
@@ -226,8 +226,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 11.02
+  m_fontSizeBase: 11.02
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 17.84
@@ -403,6 +403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfbcec4ef8a76064ea28ec6ad3574a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnself: {fileID: 0}
+  btnself: {fileID: 384490677267734692}
   txtServer: {fileID: 930082817430855408}
   txtState: {fileID: 7705215328489987188}

@@ -14,6 +14,7 @@ public class ServerRightButton : MonoBehaviour
 
     void Start()
     {
+
         btnself.onClick.AddListener(() =>
         {
             LoginMgr.Instance.LoginData.frontServerID = nowServerInfo.id;

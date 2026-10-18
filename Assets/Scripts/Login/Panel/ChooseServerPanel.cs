@@ -37,6 +37,11 @@ public class ChooseServerPanel : BasePanel
 
         }
 
+        if (InfoList.Count > 0)
+        {
+            UpdatePanel(1, Mathf.Min(5, InfoList.Count));
+        }
+
     }
 
     public override void ShowMe()
