@@ -33,6 +33,6 @@ public class ServerLeftButton : MonoBehaviour
         this.beginIndex = beginIndex;
         this.endIndex = endIndex;
 
-        txtinfo.text = beginIndex + " - " + endIndex + "区";
+        txtinfo.text = beginIndex + " ~ " + endIndex + "区";
     }
 }

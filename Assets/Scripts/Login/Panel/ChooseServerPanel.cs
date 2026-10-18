@@ -28,7 +28,7 @@ public class ChooseServerPanel : BasePanel
             int beginIndex = i * 5 + 1;
             int endIndex = 5 * i + 5;
 
-            if (endIndex < InfoList.Count)
+            if (endIndex > InfoList.Count)
             {
                 endIndex = InfoList.Count;
             }
@@ -66,7 +66,7 @@ public class ChooseServerPanel : BasePanel
 
         itemList.Clear();
 
-        for (int i = beginIndex; i < endIndex; i++)
+        for (int i = beginIndex; i <= endIndex; i++)
         {
             ServerInfo nowInfo = LoginMgr.Instance.ServerData[i-1];
 
