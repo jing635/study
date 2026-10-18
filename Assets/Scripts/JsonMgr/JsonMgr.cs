@@ -14,7 +14,7 @@ public class JsonMgr
 
     public void SaveDate(object date,string fileName)
     {
-        string path = Application.persistentDataPath + "/" + fileName + ".Json";
+        string path = Application.persistentDataPath + "/" + fileName + ".json";
 
         string Jsonstr = JsonMapper.ToJson(date);
 
@@ -23,11 +23,11 @@ public class JsonMgr
 
     public T LoadDate<T>(string fileName) where T:new()
     {
-        string path = Application.streamingAssetsPath + "/" + fileName + ".Json";
+        string path = Application.streamingAssetsPath + "/" + fileName + ".json";
 
         if(!File.Exists(path))
         {
-            path = Application.persistentDataPath + "/" + fileName + ".Json";
+            path = Application.persistentDataPath + "/" + fileName + ".json";
         }
 
         if (!File.Exists(path))

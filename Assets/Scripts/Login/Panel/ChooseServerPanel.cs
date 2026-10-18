@@ -17,7 +17,7 @@ public class ChooseServerPanel : BasePanel
     {
         List<ServerInfo> InfoList = LoginMgr.Instance.ServerData;
 
-        int num = InfoList.Count / 5 + 1;
+        int num = (InfoList.Count + 4) / 5;
         for (int i = 0; i < num; i++)
         {
             GameObject item = Instantiate(Resources.Load<GameObject>("UI/ServerLeftButton"));
@@ -26,7 +26,7 @@ public class ChooseServerPanel : BasePanel
             ServerLeftButton serverLeft = item.GetComponent<ServerLeftButton>();
 
             int beginIndex = i * 5 + 1;
-            int endIndex = 5 * i + 1;
+            int endIndex = 5 * i + 5;
 
             if (endIndex < InfoList.Count)
             {
@@ -59,9 +59,9 @@ public class ChooseServerPanel : BasePanel
 
     public void UpdatePanel(int beginIndex,int endIndex)
     {
-        for (int i = beginIndex; i < itemList.Count; i++)
+        foreach (GameObject item in itemList)
         {
-            Destroy(itemList[i]);
+            Destroy(item);
         }
 
         itemList.Clear();

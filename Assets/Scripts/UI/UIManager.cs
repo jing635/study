@@ -29,7 +29,15 @@ public class UIManager
             return panelDic[panelName] as T;
         }
 
-        GameObject panelObject = GameObject.Instantiate(Resources.Load<GameObject>("UI/" + panelName));
+        GameObject prefab = Resources.Load<GameObject>("UI/" + panelName);
+
+        if (prefab == null)
+        {
+            Debug.LogError($"找不到界面预制体：Assets/Resources/UI/{panelName}.prefab");
+            return null;
+        }
+
+        GameObject panelObject = GameObject.Instantiate(prefab);
 
         panelObject.transform.SetParent(canvasTrans, false);
 

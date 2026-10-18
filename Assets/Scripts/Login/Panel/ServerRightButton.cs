@@ -28,7 +28,7 @@ public class ServerRightButton : MonoBehaviour
     {
         nowServerInfo = info;
 
-        txtServer.text = info.id + "   " + info.name + "区";
+        txtServer.text = info.id + "区   " + info.name ;
 
         switch (info.state)
         {
