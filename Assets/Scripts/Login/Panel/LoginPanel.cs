@@ -14,6 +14,7 @@ public class LoginPanel : BasePanel
 
     public Toggle rememberpw;
     public Toggle autoLogin;
+    public Toggle bkMusic;
 
     public override void Init()
     {
@@ -41,6 +42,7 @@ public class LoginPanel : BasePanel
                 LoginMgr.Instance.LoginData.Password = password.text;
                 LoginMgr.Instance.LoginData.autoLogin = autoLogin.isOn;
                 LoginMgr.Instance.LoginData.rememberPw = rememberpw.isOn;
+                LoginMgr.Instance.LoginData.bkMusic = bkMusic.isOn;
                 LoginMgr.Instance.SaveLoginData();
 
                 if (LoginMgr.Instance.LoginData.frontServerID <=0)
@@ -82,6 +84,19 @@ public class LoginPanel : BasePanel
 
         });
 
+        bkMusic.onValueChanged.AddListener((isOn) =>
+        {
+            if (isOn)
+            {
+                AudioManager.instance.PlayMusic("bk1");
+
+            }
+            else
+            {
+                AudioManager.instance.StopMusic();
+            }
+        });
+
     }
 
 
@@ -97,6 +112,13 @@ public class LoginPanel : BasePanel
 
         rememberpw.isOn = loginData.rememberPw;
         autoLogin.isOn = loginData.autoLogin;
+        bkMusic.isOn = loginData.bkMusic;
+        
+        if(bkMusic.isOn)
+        {
+            AudioManager.instance.PlayMusic("bk1");
+        }
+        
 
         username.text = loginData.UserName;
        

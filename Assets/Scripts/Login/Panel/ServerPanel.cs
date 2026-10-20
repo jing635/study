@@ -23,9 +23,11 @@ public class ServerPanel : BasePanel
 
             LoginMgr.Instance.SaveLoginData();
 
+            AudioManager.instance.StopMusic();
+
             SceneManager.LoadScene("GameLobbyScene");
 
-            AudioManager.instance.Stop("bk1");
+            
 
             
         });

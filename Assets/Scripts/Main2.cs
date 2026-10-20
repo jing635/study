@@ -8,7 +8,11 @@ public class Main2 : MonoBehaviour
     void Start()
     {
         UIManager.Instance.ShowPanel<GameLobbyPanel>();
-        AudioManager.instance.Play("bk2");
+
+        
+
+        
+
     }
 
     // Update is called once per frame

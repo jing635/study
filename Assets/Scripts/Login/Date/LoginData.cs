@@ -9,6 +9,8 @@ public class LoginData
     public bool rememberPw;
     public bool autoLogin;
 
+    public bool bkMusic;
+
     public int frontServerID = 0;
 
 }

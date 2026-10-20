@@ -8,7 +8,7 @@ public class Main : MonoBehaviour
     void Start()
     {
         LoginPanel panel = UIManager.Instance.ShowPanel<LoginPanel>();
-        AudioManager.instance.Play("bk1");
+        
         
     }
 

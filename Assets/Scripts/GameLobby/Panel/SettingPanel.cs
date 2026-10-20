@@ -17,36 +17,90 @@ public class SettingPanel : BasePanel
     {
         btnReturn.onClick.AddListener(() =>
         {
+            AudioManager.instance.PlaySound("click");
+
+            AudioManager.instance.SaveSettingData();
+
             UIManager.Instance.HidePanel<SettingPanel>();
             UIManager.Instance.ShowPanel<GameLobbyPanel>();
         });
 
         btnBack.onClick.AddListener(() =>
         {
-            SceneManager.LoadScene("LoginScene");
+            AudioManager.instance.PlaySound("click");
+
+            AudioManager.instance.SaveSettingData();
+
+            UIManager.Instance.HidePanel<SettingPanel>();
+
+            SceneManager.LoadScene("LoginScenes");     
         });
 
-        tgMusic.onValueChanged.AddListener((value) =>
+       
+        tgMusic.onValueChanged.AddListener((isOn) =>
         {
-            //设置音乐
-            AudioManager.instance.Stop("bk2");
+            if (isOn)
+            {
+                AudioManager.instance.PlayMusic("bk2");
+            }
+            else
+            {
+                AudioManager.instance.StopMusic();
+                sbMusic.value = 0f;
+            }
         });
 
-        tgSoundEffect.onValueChanged.AddListener((value) =>
+        
+        tgSoundEffect.onValueChanged.AddListener((isOn) =>
         {
-            //设置音效
+            AudioManager.instance.SetSoundVolume(isOn ? sbSoundEffect.value : 0f);
+            if(!isOn)
+            {
+                sbSoundEffect.value = 0f;
+            }
         });
 
+        
         sbMusic.onValueChanged.AddListener((value) =>
         {
-            //设置音乐
+            AudioManager.instance.SetMusicVolume(value);
+            if(value == 0f)
+            {
+                tgMusic.isOn = false;
+            }
+            else
+            {
+                tgMusic.isOn = true;
+            }
         });
 
+        
         sbSoundEffect.onValueChanged.AddListener((value) =>
         {
-            //设置音效
+            AudioManager.instance.SetSoundVolume(value);
+
+            if (value == 0f)
+            {
+                tgSoundEffect.isOn = false;
+            }
+            else
+            {
+                tgSoundEffect.isOn = true;
+            }
+
         });
     }
 
-   
+    public override void ShowMe()
+    {
+        base.ShowMe();
+
+        SettingData settingdata = JsonMgr.Instance.LoadDate<SettingData>("SettingData");
+
+        tgMusic.isOn = settingdata.isOpenMusic;
+        tgSoundEffect.isOn = settingdata.isOpenSoundEffect;
+        sbMusic.value = settingdata.Musicvolume;
+        sbSoundEffect.value = settingdata.SoundEffectvolume;
+        
+    }
 }

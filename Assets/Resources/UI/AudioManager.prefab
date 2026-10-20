@@ -50,13 +50,16 @@ MonoBehaviour:
     name: bk1
     volume: 0.68
     isLoop: 1
+    category: 0
   - Source: {fileID: 0}
     Clip: {fileID: 8300000, guid: b8c84592e38519e4fbfb265b7bc2d7a3, type: 3}
     name: bk2
     volume: 0.57
     isLoop: 1
+    category: 0
   - Source: {fileID: 0}
     Clip: {fileID: 8300000, guid: 83f036debee50b5468ee4706d8449bdc, type: 3}
     name: click
-    volume: 0
+    volume: 0.46
     isLoop: 0
+    category: 1
