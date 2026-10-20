@@ -104,6 +104,20 @@ public class LoginPanel : BasePanel
         {
             password.text = loginData.Password;
         }
+
+        if (autoLogin.isOn)
+        {
+            if (LoginMgr.Instance.LoginData.frontServerID <= 0)
+            {
+                UIManager.Instance.ShowPanel<ChooseServerPanel>();
+            }
+            else
+            {
+                UIManager.Instance.ShowPanel<ServerPanel>();
+            }
+
+            UIManager.Instance.HidePanel<LoginPanel>();
+        }
     }
 
     public void SaveInfo(string userName, string passWord)

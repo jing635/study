@@ -21,11 +21,21 @@ public class ServerPanel : BasePanel
         {
             UIManager.Instance.HidePanel<ServerPanel>();
 
-            SceneManager.LoadScene("GameScene");
+            LoginMgr.Instance.SaveLoginData();
+
+            SceneManager.LoadScene("GameLobbyScene");
+
+            AudioManager.instance.Stop("bk1");
+
+            
         });
 
         backButton.onClick.AddListener(() =>
         {
+            if (LoginMgr.Instance.LoginData.autoLogin)
+            {
+                LoginMgr.Instance.LoginData.autoLogin = false;
+            }
             UIManager.Instance.HidePanel<ServerPanel>();
             UIManager.Instance.ShowPanel<LoginPanel>();
         });

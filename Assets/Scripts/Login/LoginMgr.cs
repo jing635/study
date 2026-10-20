@@ -20,6 +20,8 @@ public class LoginMgr
     public List<ServerInfo> ServerData => serverInfo;
 
 
+
+
     private LoginMgr()
     {
         loginData = JsonMgr.Instance.LoadDate<LoginData>("LoginData");
